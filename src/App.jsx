@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       {/* default disable text hover */}
-      <Button data={"hover"} />
+      <Button  />
     </div>
   );
 };

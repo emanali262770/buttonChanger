@@ -2,12 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {
-      primary:'#304FFE',
-      hower:'#0026CA',
-       press:'#7A7CFF'
+    extend: {
+      colors: {
+        primary: '#304FFE',
+        hower: '#0026CA',
+        press: '#7A7CFF',
+      },
     },
-    extend: {},
   },
   plugins: [],
 };

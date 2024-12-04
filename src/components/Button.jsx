@@ -1,43 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Button = ({ data }) => {
-  console.log(data);
-
-  const [changeStyle, setchangeStyle] = useState("");
-  useEffect(() => {
-    setchangeStyle(data);
-  }, [data]);
+const Button = () => {
+  const buttonStyles = {
+    size: {
+      sm: "h-[32px] w-[95px]",
+      md: "h-[40px] w-[95px]",
+      lg: "h-[48px] w-[95px]",
+    },
+    backgroundColors: {
+      primary: "bg-primary",
+      press: "bg-press",
+      hover: "hover:bg-hover duration-150",
+      disable: "border border-[#C9CFDA]",
+    },
+    textColors: {
+      textWhite: "text-white",
+      textGray: "text-[#C9CFDA]",
+    },
+    font: "text-[16px]",
+    rounded: "rounded-md",
+  };
 
   return (
     <div className="flex justify-center mt-10">
       <button
-        className={`${
-          changeStyle == "hover"
-            ? "hover:bg-hower  bg-blue-600 duration-300"
-            : ""
-        }
-         ${
-           changeStyle == "pressed"
-             ? "hover:bg-press   duration-300"
-             : "bg-primary"
-         }
-          ${
-            changeStyle == "disable"
-              ? "bg-transparent border border-gray-500"
-              : "bg-primary"
-          }
-          ${changeStyle == "default" ? " bg-primary" : ""}
-          ${
-            changeStyle == "text"
-              ? "bg-transparent border-none text-hower text-3xl  "
-              : ""
-          }
-
-           w-[130px] h-[40px] rounded-lg
-           
-           `}
+        className={`${buttonStyles.rounded} ${buttonStyles.font} ${buttonStyles.size.sm} ${buttonStyles.textColors.textWhite} ${buttonStyles.backgroundColors.primary}`}
       >
-        {changeStyle == "text" ? "Button" : ""}
+        Button
       </button>
     </div>
   );
